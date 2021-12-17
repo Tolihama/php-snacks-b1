@@ -139,6 +139,23 @@
         }
         
     ?>
+
+    <h2>Snack 4</h2>
+    <p>Creare un array con 15 numeri casuali, tenendo conto che l'array non dovrà contenere lo stesso numero più di una volta</p>
+
+    <?php
+        $randNumbersArray = [];
+
+        while (count($randNumbersArray) < 15) {
+            $rand = rand(0, 15);
+
+            if (!in_array($rand, $randNumbersArray)) {
+                $randNumbersArray[] = $rand;
+            }
+        }
+        
+        echo var_dump($randNumbersArray);
+    ?>
     
 </body>
 </html>
