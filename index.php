@@ -199,7 +199,7 @@
         ];
     ?>
 
-    <div style="background: red;">
+    <div style="background: gray;">
         <?php
             for ($i = 0; $i < count($db['teachers']); $i++) {
                 echo $db['teachers'][$i]['name'].' '.$db['teachers'][$i]['lastname'].'<br>';
@@ -214,6 +214,71 @@
             }
         ?>
     </div>
+
+    <h2>Snack 7</h2>    
+    <p>Creare un array contenente qualche alunno di un'ipotetica classe. Ogni alunno avrà Nome, Cognome e un array contenente i suoi voti scolastici. Stampare Nome, Cognome e la media dei voti di ogni alunno.</p>
+
+    <?php
+        $students = [
+            [
+                'name' => 'Francesco',
+                'lastname' => 'Marino',
+                'votes' => [
+                    'Matematica' => rand(2, 10),
+                    'Lettere' => rand(2, 10),
+                    'Storia' => rand(2, 10),
+                    'Geografia' => rand(2, 10),
+                    'Filosofia' => rand(2, 10),
+                    'Scienze' => rand(2, 10)
+                ]
+            ],
+            [
+                'name' => 'Paolo',
+                'lastname' => 'Duzioni',
+                'votes' => [
+                    'Matematica' => rand(2, 10),
+                    'Lettere' => rand(2, 10),
+                    'Storia' => rand(2, 10),
+                    'Geografia' => rand(2, 10),
+                    'Filosofia' => rand(2, 10),
+                    'Scienze' => rand(2, 10)
+                ]
+            ],
+            [
+                'name' => 'Alessio',
+                'lastname' => 'Vietri',
+                'votes' => [
+                    'Matematica' => rand(2, 10),
+                    'Lettere' => rand(2, 10),
+                    'Storia' => rand(2, 10),
+                    'Geografia' => rand(2, 10),
+                    'Filosofia' => rand(2, 10),
+                    'Scienze' => rand(2, 10)
+                ]
+            ],
+
+        ];
+
+        var_dump($students);
+
+        for ($i = 0; $i < count($students); $i++) {
+            // Stampa generalità studente
+            echo 'Studente #'.$i.'<br>';
+            echo $students[$i]['name'].' '.$students[$i]['lastname'].'<br>';
+
+            // Calcolo media
+            $arrayVotesKeys = array_keys($students[$i]['votes']);
+            $sumVotes = 0;
+            $numVotes = count($arrayVotesKeys);
+            for ($j = 0; $j < $numVotes; $j++) {
+                $sumVotes += $students[$i]['votes'][$arrayVotesKeys[$j]];
+            }
+            $averageVotes = $sumVotes / $numVotes;
+
+            // Stampa media voti
+            echo 'Media voti: '.$averageVotes.'<br><br>';
+        }
+    ?>
     
 </body>
 </html>
