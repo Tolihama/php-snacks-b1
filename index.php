@@ -141,7 +141,7 @@
     ?>
 
     <h2>Snack 4</h2>
-    <p>Creare un array con 15 numeri casuali, tenendo conto che l'array non dovrà contenere lo stesso numero più di una volta</p>
+    <p>Creare un array con 15 numeri casuali, tenendo conto che l'array non dovrà contenere lo stesso numero più di una volta.</p>
 
     <?php
         $randNumbersArray = [];
@@ -153,8 +153,22 @@
                 $randNumbersArray[] = $rand;
             }
         }
-        
+
         echo var_dump($randNumbersArray);
+    ?>
+
+    <h2>Snack 5</h2>    
+    <p>Prendere un paragrafo abbastanza lungo, contenente diverse frasi. Prendere il paragrafo e suddividerlo in tanti paragrafi. Ogni punto un nuovo paragrafo.</p>
+
+    <?php
+        $par = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur modi vitae, eius vero mollitia iusto omnis quam saepe eligendi velit, suscipit esse ea deleniti ullam sapiente exercitationem autem aliquam! Iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid minus impedit, quam, doloremque tempore ducimus provident aliquam expedita laudantium et nesciunt, iure iusto maxime hic. Est, cumque. Eum, quod quisquam!';
+
+        $paragraphs = explode('.', $par);
+
+        for ($i = 0; $i < count($paragraphs); $i++) {
+            echo '<p>'.$paragraphs[$i].'</p>';
+        }
+
     ?>
     
 </body>
