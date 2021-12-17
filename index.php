@@ -154,7 +154,7 @@
             }
         }
 
-        echo var_dump($randNumbersArray);
+        var_dump($randNumbersArray);
     ?>
 
     <h2>Snack 5</h2>    
@@ -170,6 +170,50 @@
         }
 
     ?>
+
+    <h2>Snack 6</h2>    
+    <p>Utilizzare questo array: <a href="https://pastebin.com/CkX3680A">https://pastebin.com/CkX3680A</a>. Stampiamo il nostro array mettendo gli insegnanti in un rettangolo grigio e i PM in un rettangolo verde.</p>
+
+    <?php
+        $db = [
+            'teachers' => [
+                [
+                    'name' => 'Michele',
+                    'lastname' => 'Papagni'
+                ],
+                [
+                    'name' => 'Fabio',
+                    'lastname' => 'Forghieri'
+                ]
+            ],
+            'pm' => [
+                [
+                    'name' => 'Roberto',
+                    'lastname' => 'Marazzini'
+                ],
+                [
+                    'name' => 'Federico',
+                    'lastname' => 'Pellegrini'
+                ]
+            ]
+        ];
+    ?>
+
+    <div style="background: red;">
+        <?php
+            for ($i = 0; $i < count($db['teachers']); $i++) {
+                echo $db['teachers'][$i]['name'].' '.$db['teachers'][$i]['lastname'].'<br>';
+            }
+        ?>
+
+    </div>
+    <div style="background: green;">
+        <?php
+            for ($i = 0; $i < count($db['pm']); $i++) {
+                echo $db['pm'][$i]['name'].' '.$db['pm'][$i]['lastname'].'<br>';
+            }
+        ?>
+    </div>
     
 </body>
 </html>
